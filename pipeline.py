@@ -14,14 +14,14 @@ useful_funcs.plotting_style()
 
 catalogue_path = "/Users/katherineormerod/Documents/LJMU/WIDE/catalogues/EGS_GOODSN_UDS_combined.fits"
 
-burst = False
+burst = True
 continuity = True
-burst_version = 1.1
-continuity_version = 1.1
+burst_version = 1.2
+continuity_version = 1.2
 
-run = False
-results = False
-plot = False
+run = True
+results = True
+plot = True
 sort = True
 
 start_time = datetime.now()
@@ -29,7 +29,7 @@ start_time = datetime.now()
 if burst:
     model = "burst"
     run_type = f"burst_v{burst_version}"
-    save_path = f"/Users/katherineormerod/Documents/LJMU/WIDE/catalogues/EGS_GOODSN_UDS_burst_v{burst_version}.fits"
+    save_path = f"/Users/katherineormerod/Documents/LJMU/WIDE/catalogues/bagpipes_burst_v{burst_version}.fits"
     res_catalogue_path = save_path
 
     if run:
@@ -48,7 +48,7 @@ if burst:
 if continuity:
     model = "continuity"
     run_type = f"continuity_v{continuity_version}"
-    save_path = f"/Users/katherineormerod/Documents/LJMU/WIDE/catalogues/EGS_GOODSN_UDS_continuity_v{continuity_version}.fits"
+    save_path = f"/Users/katherineormerod/Documents/LJMU/WIDE/catalogues/bagpipes_continuity_v{continuity_version}.fits"
     res_catalogue_path = save_path
 
     if run:

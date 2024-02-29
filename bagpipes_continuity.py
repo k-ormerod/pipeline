@@ -259,9 +259,9 @@ def bagpipes_continuity(version, catalogue_path, mask_lya = True):
 
         # open the observed spectrum
         try:
-            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/{field} Spectra/{field}/{ID}_prism_clear_v3.1_1D.fits")
+            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/prism_clear/{ID}_prism_clear_v3.1_1D.fits")
         except:
-            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/{field} Spectra/{field}/{ID}_prism_clear_v3.0_1D.fits")
+            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/prism_clear/{ID}_prism_clear_v3.0_1D.fits")
 
         # conversions of the observed data
 

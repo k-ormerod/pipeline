@@ -93,12 +93,12 @@ def bagpipes_burst_fit(version, catalogue_path, mask_lya = True):
 
         galaxy = pipes.galaxy(ID, load_spec, photometry_exists=False)
 
-        path_to_delete = f"/Users/katherineormerod/pipes/posterior/{run_type}/{ID}.h5"
-        if os.path.exists(path_to_delete):
-            os.remove(path_to_delete)
-            print(f".h5 file deleted for {ID}")
-        else:
-            print(f".h5 file does not exist for {ID}, continuing...")
+        # path_to_delete = f"/Users/katherineormerod/pipes/posterior/{run_type}/{ID}.h5"
+        # if os.path.exists(path_to_delete):
+        #     os.remove(path_to_delete)
+        #     print(f".h5 file deleted for {ID}")
+        # else:
+        #     print(f".h5 file does not exist for {ID}, continuing...")
         """
         Load prism dispersion and priors
         """
@@ -120,7 +120,7 @@ def bagpipes_burst_fit(version, catalogue_path, mask_lya = True):
         fit_instructions["redshift"] = (z-0.2, z+0.2)
         fit_instructions["redshift_prior"] = "Gaussian"
         fit_instructions["redshift_prior_mu"] = z
-        # fit_instructions["redshift_prior_sigma"] = 0.1
+        fit_instructions["redshift_prior_sigma"] = 0.1 
         fit_instructions["nebular"] = nebular
         fit_instructions["burst"] = burst
         fit_instructions["dust"] = dust
@@ -213,9 +213,9 @@ def bagpipes_burst_fit(version, catalogue_path, mask_lya = True):
         # open the observed spectrum
 
         try:
-            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/{field} Spectra/{field}/{ID}_prism_clear_v3.1_1D.fits")
+            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/prism_clear/{ID}_prism_clear_v3.1_1D.fits")
         except:
-            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/{field} Spectra/{field}/{ID}_prism_clear_v3.0_1D.fits")
+            hdulist = fits.open(f"/Users/katherineormerod/Documents/LJMU/WIDE/prism_clear/{ID}_prism_clear_v3.0_1D.fits")
 
         # conversions of the observed data
 
